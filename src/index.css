@@ -1,0 +1,176 @@
+@import 'tailwindcss';
+
+/* Custom Theme - Tailwind v4 */
+@theme {
+  /* Colors */
+  --color-accent: #C89B6D;
+  --color-accent-dark: #A67C50;
+  --color-accent-light: #F0E0C8;
+  --color-dark: #1a1814;
+  --color-dark-brown: #1A1A1A;
+  --color-light-bg: #faf9f7;
+  --color-card-bg: #ffffff;
+  --color-cream: #F8F5F2;
+  --color-cream-bg: #FAFAF8;
+  --color-success: #4A9E6B;
+  --color-error: #E84A4A;
+  --color-warning: #F4B942;
+  
+  /* Fonts */
+  --font-family-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Animations */
+  --animate-slide-in: slideIn 0.3s ease;
+  --animate-fade-up: fadeUp 0.8s ease;
+  --animate-fade-in: fadeIn 0.5s ease;
+  --animate-fade-in-up: fadeInUp 0.8s ease;
+  
+  /* Keyframes */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Custom base styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-light-bg);
+    color: var(--color-dark);
+  }
+  
+  /* Scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #F5F2EE;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-dark);
+  }
+}
+
+/* Custom components */
+@layer components {
+  .container-custom {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .container-custom {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}
+
+/* Utility classes for animations */
+.animate-slideIn {
+  animation: slideIn 0.3s ease;
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s ease;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Dark mode support */
+.dark {
+  --color-dark: #FAFAF8;
+  --color-light-bg: #111111;
+  --color-card-bg: #1a1a1a;
+  --color-cream-bg: #111111;
+  --color-cream: #1a1a1a;
+}
+
+
+/* Admin panel mobil stillar */
+@media (max-width: 640px) {
+  table {
+    font-size: 12px;
+  }
+  
+  td, th {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+/* Scrollbar stillari */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C89B6D;
+  border-radius: 2px;
+}
